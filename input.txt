@@ -1,0 +1,16 @@
+2 
+abcde 
+bcdef 
+1 
+1
+abc
+def
+a-d,b-e,c-f
+1
+123
+456
+1-4,2-5,3-6
+2
+abc
+cde
+2

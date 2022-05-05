@@ -40,9 +40,10 @@ shifr* shifr::Shifr_Input(ifstream& ifst) {
 }
 void shifr::InData(ifstream& ifst) {
 	ifst >> text;
+	ifst >> name;
 }
 void shifr::Output(ofstream& ofst) {
-	ofst << "Open text is " << text << endl;
+	ofst << "Open text is " << text << ", name of own - " << name << endl;
 }
 container::container()
 {

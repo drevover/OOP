@@ -4,6 +4,7 @@ using namespace std;
 namespace d {
 	class shifr {
 		char text;
+		string name;
 	public:
 		static shifr* Shifr_Input(ifstream& ifst);
 		virtual void InData(ifstream& ofst) = 0;

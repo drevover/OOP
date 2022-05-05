@@ -6,16 +6,20 @@ using namespace d;
 
 void zamena::InData(ifstream& ifst) {
 	pair = new char[100];
-	ifst >> text >> encrypt >> pair;
+	shifr::InData(ifst);
+	ifst >> encrypt >> pair;
 }
 void zamena::Output(ofstream& ofst) {
-	ofst << "It is Cypher of Zameny: open text is " << text << ", encrypted text = " << encrypt << ", massive of pair " << pair << endl;
+	ofst << "It is Cipher of Zameny: encrypted text is " << encrypt << ", massive of pair " << pair << endl;
+	shifr::Output(ofst);
 }
 void sdvig::InData(ifstream& ifst) {
-	ifst >> text >> encrypt >> n;
+	shifr::InData(ifst);
+	ifst >> encrypt >> n;
 }
 void sdvig::Output(ofstream& ofst) {
-	ofst << "It is Cypher of Sdviga: open text is " << text << ", encrypted text is " << encrypt << ", sdvig on " << n << endl;
+	ofst << "It is Cipher of Sdviga: encrypted text is " << encrypt << ", sdvig on " << n << endl;
+	shifr::Output(ofst);
 }
 shifr* shifr::Shifr_Input(ifstream& ifst) {
 	shifr* sr;
@@ -33,6 +37,12 @@ shifr* shifr::Shifr_Input(ifstream& ifst) {
 	}
 	sr->InData(ifst);
 	return sr;
+}
+void shifr::InData(ifstream& ifst) {
+	ifst >> text;
+}
+void shifr::Output(ofstream& ofst) {
+	ofst << "Open text is " << text << endl;
 }
 container::container()
 {

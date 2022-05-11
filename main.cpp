@@ -120,6 +120,12 @@ void container::Out(ofstream& ofst)
 		Temp = Temp->Next;
 	}
 	ofst << endl;
+	for (int i = 0; i < SizeList; i++) {
+		ofst << i + 1 << ": ";
+		Temp->sh->OutZamena(ofst);
+		Temp = Temp->Next;
+	}
+	ofst << endl;
 }
 int shifr::characters() {
 	return size(text);
@@ -161,4 +167,7 @@ void container::swap(Node* first, Node* second) {
 	first->sh = second->sh;
 	second->sh = tmp;
 	return;
+}
+void zamena::OutZamena(ofstream& ofst) {
+	ofst << "It is Cipher of zameny: encrypted text is " << encrypt << ", massive of pair " << pair << endl;
 }

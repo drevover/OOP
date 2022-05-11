@@ -10,6 +10,7 @@ namespace d {
 		virtual void InData(ifstream& ofst) = 0;
 		virtual void Output(ofstream& ofst) = 0;
 		virtual int characters();
+		virtual void OutZamena(ofstream& ofst) { ofst << endl; }
 	protected:
 		shifr() {};
 	};
@@ -20,6 +21,7 @@ namespace d {
 	public:
 		void InData(ifstream& ifst);
 		void Output(ofstream& ofst);
+		void OutZamena(ofstream& ofst);
 		zamena() { };
 	};
 	class sdvig : public shifr {

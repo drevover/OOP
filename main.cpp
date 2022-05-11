@@ -21,6 +21,15 @@ void sdvig::Output(ofstream& ofst) {
 	ofst << "It is Cipher of Sdviga: encrypted text is " << encrypt << ", sdvig on " << n << endl;
 	shifr::Output(ofst);
 }
+void number::InData(ifstream& ifst) {
+	pair = new char[100];
+	shifr::InData(ifst);
+	ifst >> encrypt >> pair;
+}
+void number::Output(ofstream& ofst) {
+	ofst << "It is Cipher of Change-to-number: encrypted text is " << encrypt << ", massive of pair " << pair << endl;
+	shifr::Output(ofst);
+}
 shifr* shifr::Shifr_Input(ifstream& ifst) {
 	shifr* sr;
 	int k;
@@ -31,6 +40,9 @@ shifr* shifr::Shifr_Input(ifstream& ifst) {
 		break;
 	case 2:
 		sr = new sdvig;
+		break;
+	case 3:
+		sr = new number;
 		break;
 	default:
 		return 0;

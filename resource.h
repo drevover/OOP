@@ -29,6 +29,14 @@ namespace d {
 		void Output(ofstream& ofst);
 		sdvig() { };
 	};
+	class number : public shifr {
+		int encrypt;
+		char* pair;
+	public:
+		void InData(ifstream& ifst);
+		void Output(ofstream& ofst);
+		number() { };
+	};
 	class container {
 		struct Node
 		{

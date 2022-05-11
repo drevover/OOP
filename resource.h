@@ -51,6 +51,9 @@ namespace d {
 		void Out(ofstream& ofst);
 		container();
 		~container();
+		void sort();
+		bool compare(shifr* first, shifr* second);
+		void swap(Node* first, Node* second);
 	private:
 		Node* First;
 		Node* Last;

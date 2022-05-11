@@ -124,3 +124,41 @@ void container::Out(ofstream& ofst)
 int shifr::characters() {
 	return size(text);
 }
+void container::sort() {
+	if (SizeList < 2) {
+		return;
+	}
+
+	Node* current = First;
+	bool flag = false;
+
+	do
+	{
+		current = First;
+		flag = false;
+		for (int i = 0; i < (SizeList - 1); ++i)
+		{
+			if (compare(current->sh, current->Next->sh))
+			{
+				swap(current, current->Next);
+				flag = true;
+			}
+			else
+			{
+				current = current->Next;
+			}
+		}
+	} while (flag);
+}
+
+bool container::compare(shifr* first, shifr* second) {
+	return first->characters() > second->characters();
+}
+
+void container::swap(Node* first, Node* second) {
+	shifr* tmp;
+	tmp = first->sh;
+	first->sh = second->sh;
+	second->sh = tmp;
+	return;
+}

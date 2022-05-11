@@ -8,6 +8,7 @@ namespace d {
 		static shifr* Shifr_Input(ifstream& ifst);
 		virtual void InData(ifstream& ofst) = 0;
 		virtual void Output(ofstream& ofst) = 0;
+		virtual int characters();
 	protected:
 		shifr() {};
 	};

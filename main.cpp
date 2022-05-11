@@ -115,7 +115,11 @@ void container::Out(ofstream& ofst)
 	{
 		ofst << i + 1 << ": ";
 		Temp->sh->Output(ofst);
+		ofst << "Characters on text = " << Temp->sh->characters() << endl;
 		Temp = Temp->Next;
 	}
 	ofst << endl;
+}
+int shifr::characters() {
+	return size(text);
 }

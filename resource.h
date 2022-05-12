@@ -3,7 +3,7 @@
 using namespace std;
 namespace d {
 	class shifr {
-		char text;
+		string text;
 		string name;
 	public:
 		static shifr* Shifr_Input(ifstream& ifst);
@@ -15,8 +15,7 @@ namespace d {
 		shifr() {};
 	};
 	class zamena : public shifr {
-		char encrypt;
-		char text;
+		string encrypt;
 		char* pair;
 	public:
 		void InData(ifstream& ifst);
@@ -25,8 +24,7 @@ namespace d {
 		zamena() { };
 	};
 	class sdvig : public shifr {
-		char encrypt;
-		char text;
+		sring encrypt;
 		int n;
 	public:
 		void InData(ifstream& ifst);

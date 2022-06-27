@@ -1,6 +1,6 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
-#include "Header.h"
+#include "resource.h"
 using namespace std;
 using namespace d;
 
@@ -20,6 +20,9 @@ int main(int argc, char* argv[])
     c.In(ifst);
     ofst << "Filled container. " << endl;
     c.Out(ofst);
+    ofst << endl;
+    c.MultiMethod(ofst);
+    ofst << endl;
     c.~container();
     ofst << "Empty container. " << endl;
     c.Out(ofst);

@@ -1,9 +1,46 @@
 Filled container. 
 List contains 4 elements
-1: It is Cypher of Sdviga: open text is abcde, encrypted text is bcdef, sdvig on 1
-2: It is Cypher of Zameny: open text is abc, encrypted text = def, massive of pair a-d,b-e,c-f
-3: It is Cypher of Zameny: open text is 123, encrypted text = 456, massive of pair 1-4,2-5,3-6
-4: It is Cypher of Sdviga: open text is abc, encrypted text is cde, sdvig on 2
+1: It is Cipher of Sdviga: encrypted text is bcdef, sdvig on 1
+Open text is abcde
+2: It is Cipher of Zameny: encrypted text is def, massive of pair a-d,b-e,c-f
+Open text is abc
+3: It is Cipher of Zameny: encrypted text is 456, massive of pair 1-4,2-5,3-6
+Open text is 123
+4: It is Cipher of Sdviga: encrypted text is cde, sdvig on 2
+Open text is abc
+
+
+Multimethod.
+Sdvig and Zamena
+It is Cipher of Sdviga: encrypted text is bcdef, sdvig on 1
+Open text is abcde
+It is Cipher of Zameny: encrypted text is def, massive of pair a-d,b-e,c-f
+Open text is abc
+Sdvig and Zamena
+It is Cipher of Sdviga: encrypted text is bcdef, sdvig on 1
+Open text is abcde
+It is Cipher of Zameny: encrypted text is 456, massive of pair 1-4,2-5,3-6
+Open text is 123
+Sdvig and Sdvig
+It is Cipher of Sdviga: encrypted text is bcdef, sdvig on 1
+Open text is abcde
+It is Cipher of Sdviga: encrypted text is cde, sdvig on 2
+Open text is abc
+Zamena and Zamena
+It is Cipher of Zameny: encrypted text is def, massive of pair a-d,b-e,c-f
+Open text is abc
+It is Cipher of Zameny: encrypted text is 456, massive of pair 1-4,2-5,3-6
+Open text is 123
+Zamena and Sdvig
+It is Cipher of Zameny: encrypted text is def, massive of pair a-d,b-e,c-f
+Open text is abc
+It is Cipher of Sdviga: encrypted text is cde, sdvig on 2
+Open text is abc
+Zamena and Sdvig
+It is Cipher of Zameny: encrypted text is 456, massive of pair 1-4,2-5,3-6
+Open text is 123
+It is Cipher of Sdviga: encrypted text is cde, sdvig on 2
+Open text is abc
 
 Empty container. 
 List contains 0 elements

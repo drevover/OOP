@@ -1,5 +1,5 @@
-#include <fstream>
-#include "Header.h"
+﻿#include <fstream>
+#include "resource.h"
 
 using namespace std;
 using namespace d;
@@ -40,10 +40,9 @@ shifr* shifr::Shifr_Input(ifstream& ifst) {
 }
 void shifr::InData(ifstream& ifst) {
 	ifst >> text;
-	ifst >> name;
 }
 void shifr::Output(ofstream& ofst) {
-	ofst << "Open text is " << text << ", name of own - " << name << endl;
+	ofst << "Open text is " << text << endl;
 }
 container::container()
 {
@@ -107,4 +106,54 @@ void container::Out(ofstream& ofst)
 		Temp = Temp->Next;
 	}
 	ofst << endl;
+}
+
+void zamena::MultiMethod(shifr* other, ofstream& ofst)
+{
+	other->MultiMethod_Zamena(ofst);
+}
+
+void zamena::MultiMethod_Zamena(ofstream& ofst)
+{
+	ofst << "Zamena and Zamena" << endl;
+}
+
+void zamena::MultiMethod_Sdvig(ofstream& ofst)
+{
+	ofst << "Sdvig and Zamena" << endl;
+}
+
+void sdvig::MultiMethod(shifr* other, ofstream& ofst)
+{
+	other->MultiMethod_Sdvig(ofst);
+}
+
+void sdvig::MultiMethod_Zamena(ofstream& ofst)
+{
+	ofst << "Zamena and Sdvig" << endl;
+}
+
+void sdvig::MultiMethod_Sdvig(ofstream& ofst)
+{
+	ofst << "Sdvig and Sdvig" << endl;
+}
+
+void container::MultiMethod(ofstream& ofst)
+{
+	Node* current_first = First;
+	Node* current_second = current_first->Next;
+
+	ofst << "Multimethod." << endl;
+	for (int i = 0; i < SizeList - 1; i++)
+	{
+		for (int j = i + 1; j < SizeList; j++)
+		{
+			current_first->sh->MultiMethod(current_second->sh, ofst);
+			current_first->sh->Output(ofst);
+			current_second->sh->Output(ofst);
+			current_second = current_second->Next;
+		}
+		current_first = current_first->Next;
+		current_second = current_first->Next;
+	}
 }

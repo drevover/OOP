@@ -9,7 +9,7 @@ namespace d {
 		static shifr* Shifr_Input(ifstream& ifst);
 		virtual void InData(ifstream& ofst) = 0;
 		virtual void Output(ofstream& ofst) = 0;
-		virtual int characters();
+		virtual int Characters();
 		virtual void OutZamena(ofstream& ofst) { ofst << endl; }
 	protected:
 		shifr() {};
@@ -24,7 +24,7 @@ namespace d {
 		zamena() { };
 	};
 	class sdvig : public shifr {
-		sring encrypt;
+		string encrypt;
 		int n;
 	public:
 		void InData(ifstream& ifst);
@@ -43,20 +43,20 @@ namespace d {
 		struct Node
 		{
 			shifr* sh;
-			Node* Next;
-			Node* Prev;
+			Node* next;
+			Node* prev;
 		};
 	public:
 		void In(ifstream& ifst);
 		void Out(ofstream& ofst);
 		container();
 		~container();
-		void sort();
-		bool compare(shifr* first, shifr* second);
-		void swap(Node* first, Node* second);
+		void Sort();
+		bool Compare(shifr* first, shifr* second);
+		void Swap(Node* first, Node* second);
 	private:
-		Node* First;
-		Node* Last;
-		size_t SizeList;
+		Node* first;
+		Node* last;
+		size_t sizelist;
 	};
 }

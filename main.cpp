@@ -1,5 +1,7 @@
 #include <fstream>
-#include "Header.h"
+#include "resource.h"
+#include <string>
+#define WRONG_SHIFR 0
 
 using namespace std;
 using namespace d;
@@ -33,7 +35,14 @@ void number::Output(ofstream& ofst) {
 shifr* shifr::Shifr_Input(ifstream& ifst) {
 	shifr* sr;
 	int k;
+	string tmp;
 	ifst >> k;
+	if (tmp == "\0")
+		return 0;
+	if (!isdigit(int(tmp.front())) || tmp.length() > 1)
+		k = WRONG_SHIFR;
+	else
+		k = stoi(tmp);
 	switch (k) {
 	case 1:
 		sr = new zamena;
@@ -59,115 +68,118 @@ void shifr::Output(ofstream& ofst) {
 }
 container::container()
 {
-	First = NULL;
-	Last = First;
-	SizeList = 0;
+	first = NULL;
+	last = first;
+	sizelist = 0;
 }
 
 container::~container()
 {
-	Node* Temp = NULL;
-	while (SizeList > 1)
+	Node* temp = NULL;
+	while (sizelist > 1)
 	{
-		Temp = Last->Prev;
-		delete Last;
-		Last = Temp;
-		SizeList--;
+		temp = last->prev;
+		delete last;
+		last = temp;
+		sizelist--;
 	}
-	if (SizeList == 1)
-		delete First;
-	SizeList--;
+	if (sizelist == 1)
+		delete first;
+	sizelist--;
 }
 
 void container::In(ifstream& ifst)
 {
-	Node* Temp;
+	Node* temp;
 	while (!ifst.eof())
 	{
-		Temp = new Node;
-		Temp->Next = NULL;
-		Temp->sh = shifr::Shifr_Input(ifst);
+		temp = new Node;
+		temp->next = NULL;
+		temp->sh = shifr::Shifr_Input(ifst);
 
-		if (Temp->sh == NULL)
+		if (temp->sh == NULL)
 			break;
 
-		if (First == NULL)
+		if (first == NULL)
 		{
-			First = Last = Temp;
-			Temp->Prev = Temp;
-			Temp->Next = First;
+			first = last = temp;
+			temp->prev = temp;
+			temp->next = first;
 		}
 		else
 		{
-			Temp->Prev = Last;
-			Last->Next = Temp;
-			Temp->Next = First;
-			Last = Temp;
+			temp->prev = last;
+			last->next = temp;
+			temp->next = first;
+			last = temp;
 		}
-		SizeList++;
+		sizelist++;
 	}
 }
 
 void container::Out(ofstream& ofst)
 {
-	Node* Temp = First;
-	ofst << "List contains " << SizeList << " elements" << endl;
-	for (size_t i = 0; i < SizeList; i++)
+	Node* temp = first;
+	ofst << "List contains " << sizelist << " elements" << endl;
+	for (size_t i = 0; i < sizelist; i++)
 	{
 		ofst << i + 1 << ": ";
-		Temp->sh->Output(ofst);
-		ofst << "Characters on text = " << Temp->sh->characters() << endl;
-		Temp = Temp->Next;
+		temp->sh->Output(ofst);
+		ofst << "Characters on text = " << temp->sh->Characters() << endl;
+		temp = temp->next;
 	}
 	ofst << endl;
-	for (int i = 0; i < SizeList; i++) {
+	for (int i = 0; i < sizelist; i++) {
 		ofst << i + 1 << ": ";
-		Temp->sh->OutZamena(ofst);
-		Temp = Temp->Next;
+		temp->sh->OutZamena(ofst);
+		temp = temp->next;
 	}
 	ofst << endl;
 }
-int shifr::characters() {
+
+int shifr::Characters() {
 	return size(text);
 }
-void container::sort() {
-	if (SizeList < 2) {
+
+void container::Sort() {
+	if (sizelist < 2) {
 		return;
 	}
 
-	Node* current = First;
+	Node* current = first;
 	bool flag = false;
 
 	do
 	{
-		current = First;
+		current = first;
 		flag = false;
-		for (int i = 0; i < (SizeList - 1); ++i)
+		for (int i = 0; i < (sizelist - 1); ++i)
 		{
-			if (compare(current->sh, current->Next->sh))
+			if (Compare(current->sh, current->next->sh))
 			{
-				swap(current, current->Next);
+				Swap(current, current->next);
 				flag = true;
 			}
 			else
 			{
-				current = current->Next;
+				current = current->next;
 			}
 		}
 	} while (flag);
 }
 
-bool container::compare(shifr* first, shifr* second) {
-	return first->characters() > second->characters();
+bool container::Compare(shifr* first, shifr* second) {
+	return first->Characters() > second->Characters();
 }
 
-void container::swap(Node* first, Node* second) {
+void container::Swap(Node* first, Node* second) {
 	shifr* tmp;
 	tmp = first->sh;
 	first->sh = second->sh;
 	second->sh = tmp;
 	return;
 }
+
 void zamena::OutZamena(ofstream& ofst) {
 	ofst << "It is Cipher of zameny: encrypted text is " << encrypt << ", massive of pair " << pair << endl;
 }

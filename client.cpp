@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include <fstream>
-#include "Header.h"
+#include "resource.h"
 using namespace std;
 using namespace d;
 
@@ -14,14 +14,22 @@ int main(int argc, char* argv[])
         exit(1);
     }
     ifstream ifst(argv[1]);
+    if (!ifst) {
+        cout << "No input file found!" << endl;
+        return 0;
+    }
     ofstream ofst(argv[2]);
+    if (!ofst) {
+        cout << "No output file found!" << endl;
+        return 0;
+    }
     cout << "Start" << endl;
     container c;
     c.In(ifst);
     ofst << "Filled container. " << endl;
     c.Out(ofst);
     ofst << "Sorted container. " << endl;
-    c.sort();
+    c.Sort();
     c.Out(ofst);
     c.~container();
     ofst << "Empty container. " << endl;

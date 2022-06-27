@@ -36,7 +36,7 @@ shifr* shifr::Shifr_Input(ifstream& ifst) {
 	shifr* sr;
 	int k;
 	string tmp;
-	ifst >> k;
+	ifst >> tmp;
 	if (tmp == "\0")
 		return 0;
 	if (!isdigit(int(tmp.front())) || tmp.length() > 1)
@@ -205,60 +205,60 @@ void container::MultiMethod(ofstream& ofst)
 
 void zamena::MultiMethod(shifr* other, ofstream& ofst)
 {
-	other->MultiMethodTree(ofst);
+	other->MultiMethodZamena(ofst);
 }
 
-void zamena::MultiMethodTree(ofstream& ofst)
+void zamena::MultiMethodZamena(ofstream& ofst)
 {
 	ofst << "Zamena and Zamena" << endl;
 }
 
-void zamena::MultiMethodBush(ofstream& ofst)
+void zamena::MultiMethodSdvig(ofstream& ofst)
 {
 	ofst << "Sdvig and Zamena" << endl;
 }
 
-void zamena::MultiMethodFlower(ofstream& ofst)
+void zamena::MultiMethodNumber(ofstream& ofst)
 {
 	ofst << "Number and Zamena" << endl;
 }
 
 void sdvig::MultiMethod(shifr* other, ofstream& ofst)
 {
-	other->MultiMethodBush(ofst);
+	other->MultiMethodSdvig(ofst);
 }
 
-void sdvig::MultiMethodTree(ofstream& ofst)
+void sdvig::MultiMethodZamena(ofstream& ofst)
 {
 	ofst << "Zamena and Sdvig" << endl;
 }
 
-void sdvig::MultiMethodBush(ofstream& ofst)
+void sdvig::MultiMethodSdvig(ofstream& ofst)
 {
 	ofst << "Sdvig and Sdvig" << endl;
 }
 
-void sdvig::MultiMethodFlower(ofstream& ofst)
+void sdvig::MultiMethodNumber(ofstream& ofst)
 {
 	ofst << "Number and Sdvig" << endl;
 }
 
 void number::MultiMethod(shifr* other, ofstream& ofst)
 {
-	other->MultiMethodBush(ofst);
+	other->MultiMethodNumber(ofst);
 }
 
-void number::MultiMethodTree(ofstream& ofst)
+void number::MultiMethodZamena(ofstream& ofst)
 {
 	ofst << "Zamena and Number" << endl;
 }
 
-void number::MultiMethodBush(ofstream& ofst)
+void number::MultiMethodSdvig(ofstream& ofst)
 {
 	ofst << "Sdvig and Number" << endl;
 }
 
-void number::MultiMethodFlower(ofstream& ofst)
+void number::MultiMethodNumber(ofstream& ofst)
 {
 	ofst << "Number and Number" << endl;
 }

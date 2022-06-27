@@ -13,9 +13,9 @@ namespace d {
 		virtual void OutZamena(ofstream& ofst) { ofst << endl; }
 
 		virtual void MultiMethod(shifr* other, ofstream& fout) {};
-		virtual void MultiMethodTree(ofstream& fout) {};
-		virtual void MultiMethodBush(ofstream& fout) {};
-		virtual void MultiMethodFlower(ofstream& fout) {};
+		virtual void MultiMethodZamena(ofstream& fout) {};
+		virtual void MultiMethodSdvig(ofstream& fout) {};
+		virtual void MultiMethodNumber(ofstream& fout) {};
 	protected:
 		shifr() {};
 	};
@@ -27,9 +27,9 @@ namespace d {
 		void Output(ofstream& ofst);
 		void OutZamena(ofstream& ofst);
 		void MultiMethod(shifr* other, ofstream& fout);
-		void MultiMethodTree(ofstream& fout);
-		void MultiMethodBush(ofstream& fout);
-		void MultiMethodFlower(ofstream& fout);
+		void MultiMethodZamena(ofstream& fout);
+		void MultiMethodSdvig(ofstream& fout);
+		void MultiMethodNumber(ofstream& fout);
 		zamena() { };
 	};
 	class sdvig : public shifr {
@@ -39,9 +39,9 @@ namespace d {
 		void InData(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void MultiMethod(shifr* other, ofstream& fout);
-		void MultiMethodTree(ofstream& fout);
-		void MultiMethodBush(ofstream& fout);
-		void MultiMethodFlower(ofstream& fout);
+		void MultiMethodZamena(ofstream& fout);
+		void MultiMethodSdvig(ofstream& fout);
+		void MultiMethodNumber(ofstream& fout);
 		sdvig() { };
 	};
 	class number : public shifr {
@@ -51,9 +51,9 @@ namespace d {
 		void InData(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void MultiMethod(shifr* other, ofstream& fout);
-		void MultiMethodTree(ofstream& fout);
-		void MultiMethodBush(ofstream& fout);
-		void MultiMethodFlower(ofstream& fout);
+		void MultiMethodZamena(ofstream& fout);
+		void MultiMethodSdvig(ofstream& fout);
+		void MultiMethodNumber(ofstream& fout);
 		number() { };
 	};
 	class container {

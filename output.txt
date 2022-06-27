@@ -1,10 +1,115 @@
 Filled container. 
-List contains 4 elements
-1: It is Cypher of Sdviga: open text is abcde, encrypted text is bcdef, sdvig on 1
-2: It is Cypher of Zameny: open text is abc, encrypted text = def, massive of pair a-d,b-e,c-f
-3: It is Cypher of Zameny: open text is 123, encrypted text = 456, massive of pair 1-4,2-5,3-6
-4: It is Cypher of Sdviga: open text is abc, encrypted text is cde, sdvig on 2
+List contains 5 elements
+1: It is Cipher of Sdviga: encrypted text is cde, sdvig on 2
+Open text is abc, name of own - valera
+Characters on text = 3
+2: It is Cipher of Change-to-number: encrypted text is 12, massive of pair a-1,b-2
+Open text is ab, name of own - valera
+Characters on text = 2
+3: It is Cipher of Zameny: encrypted text is abc, massive of pair x-a,y-b,z-c
+Open text is xyz, name of own - valera
+Characters on text = 3
+4: It is Cipher of Sdviga: encrypted text is fvhfof, sdvig on 2
+Open text is eugene, name of own - pushkin
+Characters on text = 6
+5: It is Cipher of Change-to-number: encrypted text is 987, massive of pair x-9,y-8,z-7
+Open text is xyz, name of own - denis
+Characters on text = 3
+
+1: 
+2: 
+3: It is Cipher of zameny: encrypted text is abc, massive of pair x-a,y-b,z-c
+4: 
+5: 
+
+
+Multimethod.
+Sdvig and Number
+It is Cipher of Sdviga: encrypted text is cde, sdvig on 2
+Open text is abc, name of own - valera
+It is Cipher of Change-to-number: encrypted text is 12, massive of pair a-1,b-2
+Open text is ab, name of own - valera
+
+Sdvig and Zamena
+It is Cipher of Sdviga: encrypted text is cde, sdvig on 2
+Open text is abc, name of own - valera
+It is Cipher of Zameny: encrypted text is abc, massive of pair x-a,y-b,z-c
+Open text is xyz, name of own - valera
+
+Sdvig and Sdvig
+It is Cipher of Sdviga: encrypted text is cde, sdvig on 2
+Open text is abc, name of own - valera
+It is Cipher of Sdviga: encrypted text is fvhfof, sdvig on 2
+Open text is eugene, name of own - pushkin
+
+Sdvig and Number
+It is Cipher of Sdviga: encrypted text is cde, sdvig on 2
+Open text is abc, name of own - valera
+It is Cipher of Change-to-number: encrypted text is 987, massive of pair x-9,y-8,z-7
+Open text is xyz, name of own - denis
+
+Number and Zamena
+It is Cipher of Change-to-number: encrypted text is 12, massive of pair a-1,b-2
+Open text is ab, name of own - valera
+It is Cipher of Zameny: encrypted text is abc, massive of pair x-a,y-b,z-c
+Open text is xyz, name of own - valera
+
+Number and Sdvig
+It is Cipher of Change-to-number: encrypted text is 12, massive of pair a-1,b-2
+Open text is ab, name of own - valera
+It is Cipher of Sdviga: encrypted text is fvhfof, sdvig on 2
+Open text is eugene, name of own - pushkin
+
+Number and Number
+It is Cipher of Change-to-number: encrypted text is 12, massive of pair a-1,b-2
+Open text is ab, name of own - valera
+It is Cipher of Change-to-number: encrypted text is 987, massive of pair x-9,y-8,z-7
+Open text is xyz, name of own - denis
+
+Zamena and Sdvig
+It is Cipher of Zameny: encrypted text is abc, massive of pair x-a,y-b,z-c
+Open text is xyz, name of own - valera
+It is Cipher of Sdviga: encrypted text is fvhfof, sdvig on 2
+Open text is eugene, name of own - pushkin
+
+Zamena and Number
+It is Cipher of Zameny: encrypted text is abc, massive of pair x-a,y-b,z-c
+Open text is xyz, name of own - valera
+It is Cipher of Change-to-number: encrypted text is 987, massive of pair x-9,y-8,z-7
+Open text is xyz, name of own - denis
+
+Sdvig and Number
+It is Cipher of Sdviga: encrypted text is fvhfof, sdvig on 2
+Open text is eugene, name of own - pushkin
+It is Cipher of Change-to-number: encrypted text is 987, massive of pair x-9,y-8,z-7
+Open text is xyz, name of own - denis
+
+
+Sorted container. 
+List contains 5 elements
+1: It is Cipher of Change-to-number: encrypted text is 12, massive of pair a-1,b-2
+Open text is ab, name of own - valera
+Characters on text = 2
+2: It is Cipher of Sdviga: encrypted text is cde, sdvig on 2
+Open text is abc, name of own - valera
+Characters on text = 3
+3: It is Cipher of Zameny: encrypted text is abc, massive of pair x-a,y-b,z-c
+Open text is xyz, name of own - valera
+Characters on text = 3
+4: It is Cipher of Change-to-number: encrypted text is 987, massive of pair x-9,y-8,z-7
+Open text is xyz, name of own - denis
+Characters on text = 3
+5: It is Cipher of Sdviga: encrypted text is fvhfof, sdvig on 2
+Open text is eugene, name of own - pushkin
+Characters on text = 6
+
+1: 
+2: 
+3: It is Cipher of zameny: encrypted text is abc, massive of pair x-a,y-b,z-c
+4: 
+5: 
 
 Empty container. 
 List contains 0 elements
+
 

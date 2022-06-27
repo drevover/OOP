@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include <fstream>
-#include "resource.h"
+#include "function.h"
 using namespace std;
 using namespace d;
 
@@ -28,6 +28,9 @@ int main(int argc, char* argv[])
     c.In(ifst);
     ofst << "Filled container. " << endl;
     c.Out(ofst);
+    ofst << endl;
+    c.MultiMethod(ofst);
+    ofst << endl;
     ofst << "Sorted container. " << endl;
     c.Sort();
     c.Out(ofst);

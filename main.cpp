@@ -1,5 +1,5 @@
 #include <fstream>
-#include "resource.h"
+#include "function.h"
 #include <string>
 #define WRONG_SHIFR 0
 
@@ -136,11 +136,9 @@ void container::Out(ofstream& ofst)
 	}
 	ofst << endl;
 }
-
 int shifr::Characters() {
 	return size(text);
 }
-
 void container::Sort() {
 	if (sizelist < 2) {
 		return;
@@ -182,4 +180,85 @@ void container::Swap(Node* first, Node* second) {
 
 void zamena::OutZamena(ofstream& ofst) {
 	ofst << "It is Cipher of zameny: encrypted text is " << encrypt << ", massive of pair " << pair << endl;
+}
+
+void container::MultiMethod(ofstream& ofst)
+{
+	Node* current_first = first;
+	Node* current_second = current_first->next;
+
+	ofst << "Multimethod." << endl;
+	for (int i = 0; i < sizelist - 1; i++)
+	{
+		for (int j = i + 1; j < sizelist; j++)
+		{
+			current_first->sh->MultiMethod(current_second->sh, ofst);
+			current_first->sh->Output(ofst);
+			current_second->sh->Output(ofst);
+			current_second = current_second->next;
+			ofst << endl;
+		}
+		current_first = current_first->next;
+		current_second = current_first->next;
+	}
+}
+
+void zamena::MultiMethod(shifr* other, ofstream& ofst)
+{
+	other->MultiMethodTree(ofst);
+}
+
+void zamena::MultiMethodTree(ofstream& ofst)
+{
+	ofst << "Zamena and Zamena" << endl;
+}
+
+void zamena::MultiMethodBush(ofstream& ofst)
+{
+	ofst << "Sdvig and Zamena" << endl;
+}
+
+void zamena::MultiMethodFlower(ofstream& ofst)
+{
+	ofst << "Number and Zamena" << endl;
+}
+
+void sdvig::MultiMethod(shifr* other, ofstream& ofst)
+{
+	other->MultiMethodBush(ofst);
+}
+
+void sdvig::MultiMethodTree(ofstream& ofst)
+{
+	ofst << "Zamena and Sdvig" << endl;
+}
+
+void sdvig::MultiMethodBush(ofstream& ofst)
+{
+	ofst << "Sdvig and Sdvig" << endl;
+}
+
+void sdvig::MultiMethodFlower(ofstream& ofst)
+{
+	ofst << "Number and Sdvig" << endl;
+}
+
+void number::MultiMethod(shifr* other, ofstream& ofst)
+{
+	other->MultiMethodBush(ofst);
+}
+
+void number::MultiMethodTree(ofstream& ofst)
+{
+	ofst << "Zamena and Number" << endl;
+}
+
+void number::MultiMethodBush(ofstream& ofst)
+{
+	ofst << "Sdvig and Number" << endl;
+}
+
+void number::MultiMethodFlower(ofstream& ofst)
+{
+	ofst << "Number and Number" << endl;
 }
